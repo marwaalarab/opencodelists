@@ -8,3 +8,17 @@ Data was downloaded and imported from [0].  We don't know how often new releases
 published.
 
 [0] https://apps.who.int/classifications/apps/icd/ClassificationDownload/DLArea/Download.aspx
+
+
+Download the latest release (a zipped xml file).
+
+To import the data, run:
+
+        ./manage.py import_data coding_systems.dmd path/to/zip/file
+        --release <release_name> --valid-from YYYYMMDD --import-ref <ref>
+
+- `release` is a short label for this coding system release - the official version number/reference if there is one.
+- `valid-from` is the date that this release is valid from (NOT the date it is being
+  imported into OpenCodelists), in YYYYMMDD format
+- `import-ref` is an optional long-form reference field for any other potential
+  references or comments on this import if desired, e.g. full filenames
