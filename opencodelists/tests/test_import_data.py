@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 from django.core.management import call_command
 
-from coding_systems.versioning.models import CodingSystemRelease
+from coding_systems.versioning.models import CodingSystemRelease, ReleaseState
 
 
 def test_unknown_module(capsys, tmpdir):
@@ -66,6 +66,7 @@ def test_calls_import_data_function_coding_system_release_already_exists(
         coding_system="dmd",
         release_name="v1",
         valid_from=date(2022, 10, 1),
+        state=ReleaseState.READY,
     )
     with pytest.raises(SystemExit) as error:
         call_command(
@@ -92,6 +93,7 @@ def test_calls_import_data_function_coding_system_force_overwrite(
         release_name="v1",
         valid_from=date(2022, 10, 1),
         import_ref="A first ref",
+        state=ReleaseState.READY,
     )
 
     call_command(
