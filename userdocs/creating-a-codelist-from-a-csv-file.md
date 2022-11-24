@@ -49,6 +49,6 @@ Note: OPCS-4 codelists can not currently be created using the form described abo
 To add an OPCS-4 codelist, navigate to `https://www.opencodelists.org/codelist/user/{ACCOUNT}/add/` — where `{ACCOUNT}` in the URL is substituted with one of the following options:
 
 * Either your OpenCodelists username, to add the codelist to your personal account
-* Or the name of the organisation your account is associated with, to add the codelist under the organisation.
+* Or the name of the organisation your account is associated with, to add the codelist under the organisation. In this case you need to remove "user" from the link `https://www.opencodelists.org/codelist/{ORGANISATION}/add/`
 
 **The OPCS-4 codes you upload should NOT include the decimal point.**
